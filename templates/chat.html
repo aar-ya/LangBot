@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ language }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangBot | {{ language|capitalize }} Tutor</title>
+  <link rel="stylesheet" href="/static/chat.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&family=Poppins&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="{{ lang_data.theme }}-theme">
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <span class="theme-icon">{{ lang_data.icon }}</span>
+        <h1>LangBot</h1>
+      </div>
+      <p class="subtitle">{{ lang_data.welcome }}</p>
+    </header>
+
+    <div class="chat-container">
+      <div class="chat-header">
+        <div class="flag">
+          {% for color in lang_data.colors %}
+            <div style="background-color: {{ color }}"></div>
+          {% endfor %}
+        </div>
+        <span>{{ language|get_localized_greeting }}</span>
+      </div>
+      
+      <div class="chat-history" id="chatHistory">
+        <div class="message bot">
+          <div class="avatar">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="content">
+            <p>{{ language|get_localized_greeting }} I'm your {{ language|capitalize }} tutor. How can I help?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <textarea id="message" rows="3" placeholder="{{ language|get_localized_greeting }}"></textarea>
+        <button id="sendBtn">
+          <i class="fas fa-paper-plane"></i> <span id="sendText">Send</span>
+        </button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>LangBot - {{ language|capitalize }} AI Tutor</p>
+    </footer>
+  </div>
+
+  <script>
+    const CURRENT_LANGUAGE = "{{ language }}";
+    const CURRENT_THEME = "{{ lang_data.theme }}";
+  </script>
+  <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat&Learn | Bilingual Tutor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="paris-theme">
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <span class="eiffel-icon">🗼</span>
+          <h1>Chat&Learn</h1>
+        </div>
+        <p class="subtitle">Your friendly bilingual English-French tutor</p>
+      </header>
+
+      <div class="chat-container">
+        <div class="chat-header">
+          <div class="french-flag">
+            <div class="blue"></div>
+            <div class="white"></div>
+            <div class="red"></div>
+          </div>
+          <span>Bonjour! Hello!</span>
+          <div class="uk-flag">🇬🇧</div>
+        </div>
+        
+        <div class="chat-history" id="chatHistory">
+          <div class="message bot">
+            <div class="avatar">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="content">
+              <p>Bonjour! Hello! I'm LangBot, your bilingual tutor. You can speak to me in English or French, and I'll help you learn!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-area">
+          <textarea id="message" rows="2" placeholder="Écrivez votre message... / Type your message..."></textarea>
+          <button id="sendBtn">
+            <i class="fas fa-paper-plane"></i> Envoyer / Send
+          </button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>LangBot uses AI to provide language learning assistance</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

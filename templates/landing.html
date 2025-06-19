@@ -1,0 +1,119 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangBot | Multilingual Tutor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="language-landing">
+    <div class="language-background"></div>
+    
+    <div class="container">
+      <header class="header">
+        <h1 class="welcome-message">
+          <span class="english">Welcome</span>
+          <span class="french">Bienvenue</span>
+          <span class="spanish">¡Bienvenido!</span>
+          <span class="german">Willkommen</span>
+          <span class="italian">Benvenuto</span>
+          <span class="hindi">स्वागत है</span>
+        </h1>
+        <p class="subtitle">Choose your language / Choisissez votre langue / Elige tu idioma / Wähle deine Sprache / Scegli la tua lingua / अपनी भाषा चुनें</p>
+      </header>
+
+      <div class="language-grid">
+        <a href="/chat/english" class="language-card english">
+          <div class="flag">🇬🇧</div>
+          <h3>English</h3>
+          <p>Learn English with AI assistance</p>
+        </a>
+
+        <a href="/chat/french" class="language-card french">
+          <div class="flag">🇫🇷</div>
+          <h3>Français</h3>
+          <p>Apprenez le français avec IA</p>
+        </a>
+
+        <a href="/chat/spanish" class="language-card spanish">
+          <div class="flag">🇪🇸</div>
+          <h3>Español</h3>
+          <p>Aprende español con IA</p>
+        </a>
+
+        <a href="/chat/german" class="language-card german">
+          <div class="flag">🇩🇪</div>
+          <h3>Deutsch</h3>
+          <p>Lernen Sie Deutsch mit KI</p>
+        </a>
+
+        <a href="/chat/italian" class="language-card italian">
+          <div class="flag">🇮🇹</div>
+          <h3>Italiano</h3>
+          <p>Impara l'italiano con IA</p>
+        </a>
+
+        <a href="/chat/hindi" class="language-card hindi">
+          <div class="flag">🇮🇳</div>
+          <h3>हिंदी</h3>
+          <p>AI सहायता के साथ हिंदी सीखें</p>
+        </a>
+      </div>
+
+      <footer class="footer">
+        <p>LangBot - Your multilingual AI tutor © 2023</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangBot | Multilingual Tutor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="language-landing">
+    <div class="language-background"></div>
+    
+    <div class="container">
+      <header class="header">
+        <h1 class="welcome-message">
+          <span class="english">Welcome</span>
+          <span class="french">Bienvenue</span>
+          <span class="spanish">¡Bienvenido!</span>
+          <span class="german">Willkommen</span>
+          <span class="italian">Benvenuto</span>
+          <span class="hindi">स्वागत है</span>
+          <span class="japanese">ようこそ</span>
+        </h1>
+        <p class="subtitle">Choose your language / Choisissez votre langue / Elige tu idioma / Wähle deine Sprache / Scegli la tua lingua / अपनी भाषा चुनें / 言語を選択</p>
+      </header>
+
+      <!-- Change this section in landing.html -->
+<div class="language-grid">
+  {% for lang in languages %}
+  <a href="/chat/{{ lang }}" class="language-card {{ lang }}">
+    <div class="flag">{{ lang|get_flag_emoji }}</div>
+    <h3>{{ LANGUAGE_DATA[lang]['welcome'].split(' ')[0] }}</h3>
+    <p>Start learning {{ lang|capitalize }}</p>
+  </a>
+  {% endfor %}
+</div>
+
+      <footer class="footer">
+        <p>LangBot - Your multilingual AI tutor © 2023</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

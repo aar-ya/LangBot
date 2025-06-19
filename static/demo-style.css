@@ -1,0 +1,231 @@
+:root {
+  --navy: #2C3E50;
+  --gold: #D4AF37;
+  --red: #E63946;
+  --cream: #F8F4E9;
+  --gray: #333333;
+  --title-font: 'Playfair Display', serif;
+  --body-font: 'Montserrat', sans-serif;
+}
+
+.paris-theme {
+  background-color: var(--cream);
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.logo h1 {
+  font-family: var(--title-font);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.eiffel-icon {
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: var(--navy);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.chat-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid var(--gold);
+}
+
+.chat-header {
+  background: var(--navy);
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-family: var(--title-font);
+}
+
+.french-flag {
+  display: flex;
+  height: 20px;
+  width: 30px;
+}
+
+.french-flag div {
+  width: 33.33%;
+}
+
+.french-flag .blue { background: #0055A4; }
+.french-flag .white { background: white; }
+.french-flag .red { background: #EF4135; }
+
+.uk-flag {
+  font-size: 1.2rem;
+}
+
+.chat-history {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 60vh;
+  background: url('https://example.com/paris-pattern.png') center/cover;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.message .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.message .content {
+  flex: 1;
+}
+
+.message.user .content {
+  background: var(--navy);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 18px 18px 0 18px;
+  max-width: 80%;
+  margin-left: auto;
+}
+
+.message.bot .content {
+  background: white;
+  color: var(--gray);
+  padding: 12px 16px;
+  border-radius: 18px 18px 18px 0;
+  max-width: 80%;
+  border: 1px solid var(--gold);
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid var(--gold);
+  background: white;
+}
+
+textarea {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  font-family: var(--body-font);
+  resize: none;
+  outline: none;
+  background: var(--cream);
+}
+
+textarea:focus {
+  border-color: var(--red);
+}
+
+button {
+  padding: 0 20px;
+  background: var(--red);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--title-font);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button:hover {
+  background: var(--navy);
+  color: var(--gold);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--navy);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* Animation for new messages */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Typing indicator */
+.typing-dots {
+  display: flex;
+  padding: 10px 15px;
+}
+
+.typing-dots .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.typing-dots .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-5px); }
+}
